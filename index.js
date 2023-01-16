@@ -1,7 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
+// const axios = require('axios');
 const rateLimit = require('express-rate-limit');
 const {createProxyMiddleware} = require('http-proxy-middleware');
+const { isAuthenticated } = require('./authentication_middleware');
+
+
 const app = express();
 const PORT = 3005;
 
@@ -13,6 +17,9 @@ const limiter = rateLimit({
 
 app.use(morgan('combined'));
 app.use(limiter);
+
+app.use(isAuthenticated)
+
 app.use('/bookingservice' , createProxyMiddleware({ target : 'http://localhost:3002/' , changeOrigin:true}));
 
 app.get('/home',(req,res)=>{
