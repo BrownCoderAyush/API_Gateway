@@ -18,7 +18,7 @@ const limiter = rateLimit({
 app.use(morgan('combined'));
 app.use(limiter);
 
-app.use(isAuthenticated)
+app.use('/bookingservice' , isAuthenticated);
 
 app.use('/bookingservice' , createProxyMiddleware({ target : 'http://localhost:3002/' , changeOrigin:true}));
 
