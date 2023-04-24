@@ -1,5 +1,9 @@
 # Welcome to API_Gateway
 
+
+### This service acts as a Gateway to all other `microservices` under `AIRLINE_MANAGEMENT_SYSTEM`
+
+
 # Project Setup 
 
 - clone the project on your local.
@@ -10,5 +14,10 @@
 AUTH_SERVICE_PATH='http://localhost:3001'
 ```
 
-### This service acts as a Gateway to all other `microservices` under `AIRLINE_MANAGEMENT_SYSTEM` 
 
+## Microservices 
+
+- [Flights and Search Service ](https://github.com/BrownCoderAyush/FlightsAndSearchService-)
+- [Booking Service](https://github.com/BrownCoderAyush/AirlineBookingService)
+- [Authentication Service](https://github.com/BrownCoderAyush/AuthService)
+- [Reminder Service](https://github.com/BrownCoderAyush/ReminderService)
